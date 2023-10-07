@@ -1,5 +1,7 @@
+import { cn } from "@/lib/utils"
 import { cva, VariantProps } from "class-variance-authority"
-import { ButtonHTMLAttributes } from "react"
+import { Loader2 } from "lucide-react"
+import { ButtonHTMLAttributes, FC } from "react"
 
 
 const buttonVariants = cva(
@@ -23,11 +25,17 @@ const buttonVariants = cva(
     }
 )
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {}
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+    loading?: boolean
+}
 
-export default function Button() {
+const Button: FC<ButtonProps> = ({ className, children, variant, loading, size, ...props}) => {
     return (
-      <main className='text-red-500'>Hello world
-      </main>
+      <button className={cn(buttonVariants({ variant, size, className }))}>
+        {loading? <Loader2 className='mr-2 h-4 w-4 animate-spin'/> : null}
+        {children}
+      </button>
     )
   }
+
+  export default Button
