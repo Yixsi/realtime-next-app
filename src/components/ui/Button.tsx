@@ -31,7 +31,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Va
 
 const Button: FC<ButtonProps> = ({ className, children, variant, loading, size, ...props}) => {
     return (
-      <button className={cn(buttonVariants({ variant, size, className }))}>
+      <button className={cn(buttonVariants({ variant, size, className }))} disabled={loading} {...props}>
         {loading? <Loader2 className='mr-2 h-4 w-4 animate-spin'/> : null}
         {children}
       </button>
