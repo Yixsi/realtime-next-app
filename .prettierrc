@@ -1,7 +1,6 @@
 {
-    "useTabs": true,
-    "singleQuote": true,
-    "tsxSingleQuote": true,
-    "trailingComma": "none",
-    "arrowParens": "avoid"
+	"useTabs": true,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"arrowParens": "avoid"
 }

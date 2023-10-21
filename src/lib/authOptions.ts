@@ -37,7 +37,7 @@ export const options: NextAuthOptions = {
 			const dbUser = (await db.get(`user: ${token.id}`)) as User | null;
 
 			if (!dbUser) {
-				token.id = user!.id;
+				token.id = user.id;
 				return token;
 			}
 
