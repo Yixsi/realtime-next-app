@@ -1,3 +1,36 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "standard",
+    "eslint-config-prettier"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "camelcase": ["error", { "properties": "always" }],
+        "no-case-declarations": "off",
+        "@typescript-eslint/ban-ts-comment": "warn",
+        "@typescript-eslint/ban-types": "warn",
+        "@typescript-eslint/consistent-generic-constructors": "warn",
+        "@typescript-eslint/no-empty-function": "warn",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
+        "@typescript-eslint/no-non-null-assertion": "warn",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/prefer-ts-expect-error": "warn",
+        "no-var": "warn",
+        "prefer-const": "warn",
+        "no-extra-boolean-cast": "warn",
+        "semi": ["error", "always"],
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/array-type": "off"
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "root": true
 }
